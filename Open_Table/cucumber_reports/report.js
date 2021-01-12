@@ -7,7 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 21027568357,
+  "duration": 26342584987,
   "status": "passed"
 });
 formatter.background({
@@ -36,21 +36,21 @@ formatter.match({
   "location": "StepDefinition.launch_the_application_browser()"
 });
 formatter.result({
-  "duration": 808649007,
+  "duration": 2495749264,
   "status": "passed"
 });
 formatter.match({
   "location": "StepDefinition.open_the_webpage_of_open_table()"
 });
 formatter.result({
-  "duration": 16578865065,
+  "duration": 23188124258,
   "status": "passed"
 });
 formatter.match({
   "location": "StepDefinition.verify_title_of_homepage()"
 });
 formatter.result({
-  "duration": 46431160,
+  "duration": 220592090,
   "status": "passed"
 });
 formatter.scenario({
@@ -120,77 +120,77 @@ formatter.match({
   "location": "StepDefinition.clicks_on_dropdown_for_location()"
 });
 formatter.result({
-  "duration": 786700834,
+  "duration": 2038624692,
   "status": "passed"
 });
 formatter.match({
   "location": "StepDefinition.choose_location()"
 });
 formatter.result({
-  "duration": 1796392348,
+  "duration": 2489783119,
   "status": "passed"
 });
 formatter.match({
   "location": "StepDefinition.choose_restaurant()"
 });
 formatter.result({
-  "duration": 4011612545,
+  "duration": 5319776796,
   "status": "passed"
 });
 formatter.match({
   "location": "StepDefinition.click_on_menu()"
 });
 formatter.result({
-  "duration": 11088803841,
+  "duration": 16297044687,
   "status": "passed"
 });
 formatter.match({
   "location": "StepDefinition.click_on_view_full_menu()"
 });
 formatter.result({
-  "duration": 260529684,
+  "duration": 273586730,
   "status": "passed"
 });
 formatter.match({
   "location": "StepDefinition.click_on_photos()"
 });
 formatter.result({
-  "duration": 201693303,
+  "duration": 198427500,
   "status": "passed"
 });
 formatter.match({
   "location": "StepDefinition.click_on_reviews()"
 });
 formatter.result({
-  "duration": 219552154,
+  "duration": 266996520,
   "status": "passed"
 });
 formatter.match({
   "location": "StepDefinition.print_the_current_ratting()"
 });
 formatter.result({
-  "duration": 83742437,
+  "duration": 92085580,
   "status": "passed"
 });
 formatter.match({
   "location": "StepDefinition.go_to_faq()"
 });
 formatter.result({
-  "duration": 65603940,
+  "duration": 84716575,
   "status": "passed"
 });
 formatter.match({
   "location": "StepDefinition.check_parking_details()"
 });
 formatter.result({
-  "duration": 42190705,
+  "duration": 62857847,
   "status": "passed"
 });
 formatter.match({
   "location": "StepDefinition.check_contact_number()"
 });
 formatter.result({
-  "duration": 449867631,
+  "duration": 506899671,
   "status": "passed"
 });
 });

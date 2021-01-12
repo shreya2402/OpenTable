@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="57.468203">
-    <testcase classname="OpenTable Details of restaurant" name="Verify details of restaurant" time="57.468203">
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="79.87785">
+    <testcase classname="OpenTable Details of restaurant" name="Verify details of restaurant" time="79.87785">
         <system-out>
             <![CDATA[Given Launch the application browser........................................passed
 And Open the webpage of Open Table..........................................passed
