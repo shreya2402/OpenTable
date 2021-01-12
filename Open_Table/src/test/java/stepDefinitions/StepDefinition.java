@@ -18,6 +18,7 @@ public class StepDefinition {
 	
 	WebDriver driver;
 	Pages.Home_details hd;
+	Pages.Home_Page hp;
 	
 	@Before
 	public void setopen() {
@@ -52,6 +53,12 @@ public class StepDefinition {
     @And("^Open the webpage of Open Table$")
     public void open_the_webpage_of_open_table() throws Throwable {
         System.out.println("Open the webpage of Open Table");
+        hp = new Pages.Home_Page(driver);
+        hp.clickSignIn();
+        //hp.clickEmail();
+        hp.getDataFromXLSX();
+        hp.clickpass();
+        hp.clicksignin1();
     }
 
     @And("^verify title of homepage$")
@@ -74,7 +81,8 @@ public class StepDefinition {
     @And("^choose restaurant$")
     public void choose_restaurant() throws Throwable {
         System.out.println("choose restaurant");
-        hd.chooseRestaurant();
+        hd.restro();
+        //hd.chooseRestaurant();
         
     }
 
@@ -128,106 +136,19 @@ public class StepDefinition {
     public void check_contact_number() throws Throwable {
         System.out.println("check contact number");
         hd.clicviewMore();
-        hd.contact();
+        
+        
+
+        String original3 = hd.contact();
+        System.out.println(original3);
+        
+        String expected3 = "(02) 4998 4650";
+        Assert.assertEquals(original3, expected3);
     }
 
-    @And("^check website of restaurant$")
-    public void check_website_of_restaurant() throws Throwable {
-        System.out.println("check website of restaurant");
-      //a[@href='https://www.bimbadgen.com.au/']
-        //String website = driver.findElement(By.xpath("//a[@href='https://www.bimbadgen.com.au/']")).getText();
-        //System.out.println("Website: "+website);
-    }
+   
     
     
     
-    
-    
-    //Register Functionality
-   public By signupframe = By.xpath("//iframe[@title='Sign up']");
-    
-    @Given("^the application browser is launched$")
-    public void the_application_browser_is_launched() throws Throwable {
-        System.out.println("the application browser is launched");
-    }
-
-    @When("^user clicks Sign up button$")
-    public void user_clicks_sign_up_button() throws Throwable {
-    	System.out.println("user clicks Sign up button");
-    	//button[@class='_1ne6cGD8CL2x_1xIImjIFp _1FpqChvjnfdczUl5bA5xyI'][text()='Sign up']
-    	driver.findElement(By.xpath("//button[@class='_1ne6cGD8CL2x_1xIImjIFp _1FpqChvjnfdczUl5bA5xyI'][text()='Sign up']")).click();
-    }
-
-    @Then("^the homepage is reloaded$")
-    public void the_homepage_is_reloaded() throws Throwable {
-    	System.out.println("the homepage is reloaded");
-    }
-
-    @And("^the Open Table homepage is opened$")
-    public void the_open_table_homepage_is_opened() throws Throwable {
-    	System.out.println("the Open Table homepage is opened");
-    }
-
-    @And("^user enters the first name$")
-    public void user_enters_the_first_name() throws Throwable {
-    	System.out.println("user enters the first name");
-    	WebElement framesignup = driver.findElement(signupframe);
-    	driver.switchTo().frame(framesignup);
-    	
-    	driver.findElement(By.xpath("//input[@id='FirstName']")).sendKeys("Mohan");
-    }
-
-    @And("^user enters the last name$")
-    public void user_enters_the_last_name() throws Throwable {
-    	System.out.println("user enters the last name");
-    	driver.findElement(By.id("LastName")).sendKeys("Mishra");
-    }
-
-    @And("^user enters the email$")
-    public void user_enters_the_email() throws Throwable {
-    	System.out.println("user enters the email");
-    	driver.findElement(By.id("Email")).sendKeys("mohan12@gmail.com");
-    	
-    }
-
-    @And("^user enters valid password$")
-    public void user_enters_valid_password() throws Throwable {
-    	System.out.println("user enters valid password");
-    	driver.findElement(By.id("Password")).sendKeys("mohan12345");
-    }
-
-    @And("^user Reenters the password$")
-    public void user_reenters_the_password() throws Throwable {
-    	System.out.println("user Reenters the password");
-    	driver.findElement(By.id("Password2")).sendKeys("mohan12345");
-    	
-    }
-
-    @And("^user selects the primary dining location$")
-    public void user_selects_the_primary_dining_location() throws Throwable {
-    	System.out.println("user selects the primary dining location");
-    	driver.findElement(By.id("PrimaryDiningCityId")).click();
-    	driver.findElement(By.xpath("//option[@value='255']")).click();
-    	
-    	
-    }
-
-    @And("^user clicks on create account button$")
-    public void user_clicks_on_create_account_button() throws Throwable {
-    	System.out.println("user clicks on create account button");
-    	//driver.findElement(By.xpath("//button[@type='submit'][text()='Create Account']")).click();
-    }
-
-    @And("^user clicks on the profile icon$")
-    public void user_clicks_on_the_profile_icon() throws Throwable {
-    	System.out.println("user clicks on the profile icon");
-    }
-
-    @And("^user clicks on sign out option$")
-    public void user_clicks_on_sign_out_option() throws Throwable {
-    	System.out.println("user clicks on sign out option");
-    }
-
-
 
 }

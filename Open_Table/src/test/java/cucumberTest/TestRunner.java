@@ -18,6 +18,7 @@ features = "features/demo_recipe.feature"
 @CucumberOptions(
 features = "features/details_of_restaurant.feature"
 ,glue={"stepDefinitions"}
+,plugin = {"html:cucumber_reports","junit:cucumber_reports/sucumber.xml"}
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 

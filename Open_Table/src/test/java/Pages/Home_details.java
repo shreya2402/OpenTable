@@ -93,17 +93,16 @@ public class Home_details {
 	
 	public void clicviewMore() {
 		
-
 		WebElement scanEle =new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(viewmore));
 		Actions action =new Actions(driver);
 		action.moveToElement(scanEle).click().build().perform();
-		//driver.findElement(By.xpath("//span[text()='View more']")).click();
 	}
 	
-	public void contact() {
+	public String contact() {
 		//div[text()='(02) 4998 4650']
         String contact = driver.findElement(contactelement).getText();
         System.out.println("Phone number: "+ contact);
+        return contact;
 	}
 	
 	
@@ -112,5 +111,12 @@ public class Home_details {
 		String title2 = driver.getTitle();
 		return title2;
 		
+	}
+	
+	
+	public void restro() {
+		driver.findElement(By.xpath("//input[@placeholder=\"Location, Restaurant, or Cuisine\"]")).sendKeys("Bimbadgen Pizza Cafe");
+		driver.findElement(By.xpath("//button[text()='Let’s go']")).click();
+		driver.findElement(By.xpath("//img[@srcset=\"https://resizer.otstatic.com/v2/photos/legacy/3/30792923.jpg 208w, https://resizer.otstatic.com/v2/photos/xsmall/3/30792923.jpg 105w, https://images.otstatic.com/prod1/30792923/3/small.jpg 160w, https://images.otstatic.com/prod1/30792923/3/medium.jpg 320w\"]")).click();
 	}
 }
