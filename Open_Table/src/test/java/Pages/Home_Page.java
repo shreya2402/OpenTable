@@ -12,6 +12,8 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.DataProvider;
 
 public class Home_Page {
+	//this file is for login
+	
 	WebDriver driver;
     public By button1=By.xpath("//button[text()='Sign in']"); 
     public By email=By.xpath("//input[@name='Email']");
@@ -50,12 +52,14 @@ public class Home_Page {
 	 
 	 
 	 
-	 public String[][] getDataFromXLSX() throws Exception
+	 public void getDataFromXLSX() throws Exception
 	    {
 	        String[][] array=null;
-	       
+	       //Get the file
 	        FileInputStream fs=new FileInputStream("testData.xlsx");
+	        //go to workbook
 	        XSSFWorkbook wb=new XSSFWorkbook(fs);
+	        //go to the sheet
 	        XSSFSheet sh=wb.getSheetAt(0);
 	        XSSFRow rows;
 	        XSSFCell cell;
@@ -63,14 +67,14 @@ public class Home_Page {
 	        int rowCount=sh.getLastRowNum();
 	        int columnCount=sh.getRow(0).getLastCellNum();
 	        
-	        System.out.println(rowCount);
-	        System.out.println(columnCount);
+	        //System.out.println(rowCount);
+	        //System.out.println(columnCount);
 	       
 	        array=new String[rowCount][columnCount];
 	       
-	        for(int i=1;i<rowCount+1;i++)
+	        for(int i=1;i<rowCount+1;i++) //for rows
 	        {
-	            for(int j=0;j<columnCount;j++)
+	            for(int j=0;j<columnCount;j++) //for columns
 	            {
 	            rows=sh.getRow(i);  //1
 	            cell=rows.getCell(j); // 1,0
@@ -79,13 +83,10 @@ public class Home_Page {
 	            }
 	            
 	        }
-	        clickEmail(array[0][0], array[0][1]);
-	        return array; 
+	        clickEmail(array[0][0], array[0][1]); //sending email and password which is read from the file
+	        
 	               
 	    }
 
-	
-	
-	
 	
 }

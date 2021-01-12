@@ -17,15 +17,15 @@ import cucumber.api.java.en.When;
 public class StepDefinition {
 	
 	WebDriver driver;
-	Pages.Home_details hd;
+	Pages.Home_details hd;   
 	Pages.Home_Page hp;
 	
 	@Before
 	public void setopen() {
 		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
-		driver = new ChromeDriver();
+		driver = new ChromeDriver();    
 		//System.out.println("Done with Chrome Diver.....");
-		driver.manage().window().maximize();
+		driver.manage().window().maximize();    //maximize browser window
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
 		
@@ -82,7 +82,7 @@ public class StepDefinition {
     public void choose_restaurant() throws Throwable {
         System.out.println("choose restaurant");
         hd.restro();
-        //hd.chooseRestaurant();
+        
         
     }
 
@@ -137,7 +137,7 @@ public class StepDefinition {
         System.out.println("check contact number");
         hd.clicviewMore();
         
-        
+        //verify the contact number
 
         String original3 = hd.contact();
         System.out.println(original3);
@@ -146,9 +146,5 @@ public class StepDefinition {
         Assert.assertEquals(original3, expected3);
     }
 
-   
-    
-    
-    
 
 }

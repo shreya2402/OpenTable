@@ -8,12 +8,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Home_details {
-	
+	//This file is for checking all the details of restaurant
 	WebDriver driver;
 	public By  dropdown1 = By.xpath("//button[@aria-label='Toggle location picker']");
 	public By country = By.xpath("//a[@href='https://www.opentable.com/sydney-restaurants'][text()='Sydney / New South Wales']");
 	public By area = By.xpath("//div[@class='_1PJhO46xNvXjCqsm_OWY8u'][text()='Hunter Valley']");
-	public By restaurant = By.xpath("//img[@alt='A photo of Bimbadgen Pizza Cafe restaurant']");
+	public By restaurant = By.xpath("//img[@srcset=\"https://resizer.otstatic.com/v2/photos/legacy/3/30792923.jpg 208w, https://resizer.otstatic.com/v2/photos/xsmall/3/30792923.jpg 105w, https://images.otstatic.com/prod1/30792923/3/small.jpg 160w, https://images.otstatic.com/prod1/30792923/3/medium.jpg 320w\"]");
 	public By menu = By.id("menu-link");
 	public By menufull =By.linkText("Menu");
 	public By photos1 = By.linkText("Photos");
@@ -24,6 +24,8 @@ public class Home_details {
 	public By detailparking = By.xpath("//div[text()='None']");
 	public By viewmore = By.xpath("//span[text()='View more']");
 	public By contactelement = By.xpath("//div[text()='(02) 4998 4650']");
+	public By search = By.xpath("//input[@placeholder=\"Location, Restaurant, or Cuisine\"]");
+	public By letsgo = By.xpath("//button[text()='Let’s go']");
 	
 	
 	public Home_details(WebDriver driver) {
@@ -115,8 +117,8 @@ public class Home_details {
 	
 	
 	public void restro() {
-		driver.findElement(By.xpath("//input[@placeholder=\"Location, Restaurant, or Cuisine\"]")).sendKeys("Bimbadgen Pizza Cafe");
-		driver.findElement(By.xpath("//button[text()='Let’s go']")).click();
-		driver.findElement(By.xpath("//img[@srcset=\"https://resizer.otstatic.com/v2/photos/legacy/3/30792923.jpg 208w, https://resizer.otstatic.com/v2/photos/xsmall/3/30792923.jpg 105w, https://images.otstatic.com/prod1/30792923/3/small.jpg 160w, https://images.otstatic.com/prod1/30792923/3/medium.jpg 320w\"]")).click();
+		driver.findElement(search).sendKeys("Bimbadgen Pizza Cafe");
+		driver.findElement(letsgo).click();
+		driver.findElement(restaurant).click();
 	}
 }
